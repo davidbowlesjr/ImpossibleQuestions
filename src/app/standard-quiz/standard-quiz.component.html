@@ -1,0 +1,8 @@
+
+<h2>Question {{questionNum}} Of {{totalNumOfQuestions}}</h2>
+<app-question [question]="questionsView[questionNum-1]" (userAnswer)="onSubmit($event)" [isAnswered]="isAnsered.includes(questionNum)"></app-question>
+<button *ngIf="questionNum != totalNumOfQuestions" (click)="nextQuestion()">Next Question</button>
+<button *ngIf="questionNum != 1" (click)="previousQuestion()">Previous Question</button>
+
+<h2>{{numOfCorrectAnswers}} out of {{totalNumOfQuestions}} are correct</h2>
+

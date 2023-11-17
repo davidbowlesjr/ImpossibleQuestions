@@ -1,0 +1,11 @@
+<div>{{question.questionString}}</div>
+
+<div class="options">
+    <ol *ngFor="let answer of question.answers">
+         <li (click)="onAnswer(answer)">{{answer.answerString}}</li>
+    </ol>
+</div>
+
+<h3 *ngIf="isAnswered">User Answer: {{question.answers[question.userAnswerId-1].answerString}}</h3>
+
+
